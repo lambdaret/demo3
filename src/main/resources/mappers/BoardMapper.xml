@@ -7,6 +7,6 @@
         SELECT 
         	*
         FROM 
-        TB_BOARD
+        BOARD
     </select>
 </mapper>
