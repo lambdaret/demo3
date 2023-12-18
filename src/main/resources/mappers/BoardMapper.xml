@@ -9,4 +9,8 @@
         FROM 
         BOARD
     </select>
+    
+    <insert id="insertBoard" parameterType="com.example.demo3.sample.domain.BoardVO">
+        INSERT INTO board (title, content_text) VALUES (#{title}, #{contentText})
+    </insert>
 </mapper>

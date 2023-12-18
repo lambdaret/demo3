@@ -1,4 +1,4 @@
-package com.example.demo3.sample.entity;
+package com.example.demo3.sample.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -9,12 +9,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
 @Entity
+@Data
 //@Table(name = "TB_BOARD")
 public class Board {
 	@Id
