@@ -7,29 +7,34 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo3.common.domain.ResVO;
 import com.example.demo3.sample.domain.BoardVO;
 import com.example.demo3.sample.model.Board;
 import com.example.demo3.sample.service.SampleJpaService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
+@Tag(name = "SampleJpaController", description = "SampleJpaController API")
 public class SampleJpaController {
 	
 	SampleJpaService sampleJpaService;
 	
 	@GetMapping("/sample/jpa/findAllBoard")
-	public List<Board> findAllBoard(HttpServletRequest req, BoardVO param) {
+	public ResVO findAllBoard(HttpServletRequest req, BoardVO param) {
 		List<Board> list = sampleJpaService.findAllBoard(param);
-		return list;
+		return new ResVO(list);
 	}
 	
 	@PostMapping("/sample/jpa/insertBoard")
-	public void insertBoard(HttpServletRequest req, @RequestBody BoardVO param) {
+	public ResVO insertBoard(HttpServletRequest req, @RequestBody BoardVO param) {
 		
 		sampleJpaService.insertBoard(param);
+		ResVO res = new ResVO();
+		return res;
 	}
 	
 	

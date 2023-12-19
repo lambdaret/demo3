@@ -36,24 +36,26 @@ public class ResAdvice implements ResponseBodyAdvice<Object> {
 	public Object beforeBodyWrite(@Nullable Object body, MethodParameter returnType, MediaType selectedContentType,
 			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
 			ServerHttpResponse response) {
-		ResVO<Object> res = new ResVO<>();
 		if (body instanceof MyException) {
+			ResVO res = new ResVO();
 			MyException err = (MyException)body;
 			res.setSuccess(false);
 			res.setErrCode(err.getErrCode());
 			res.setErrMsg(err.getErrMsg());
 			return res;
 		} else if (body instanceof Exception) {
+			ResVO res = new ResVO();
 			Exception err = (Exception)body;
 			res.setSuccess(false);
 			res.setErrCode("UNKNOWN");
 			res.setErrMsg(err.getMessage());
 			return res;
-		} else {
+		} else if(body instanceof ResVO) {
+			ResVO res = (ResVO)body;
 			res.setSuccess(true);
-			res.setData(body);
 			return res;
-			
+		} else {
+			return body;
 		}
 	}	
 
