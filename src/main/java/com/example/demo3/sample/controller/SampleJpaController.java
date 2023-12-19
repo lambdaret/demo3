@@ -2,6 +2,8 @@ package com.example.demo3.sample.controller;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,18 +22,19 @@ import lombok.AllArgsConstructor;
 @RestController
 @Tag(name = "SampleJpaController", description = "SampleJpaController API")
 public class SampleJpaController {
-	
+	private final Logger logger = LogManager.getLogger(SampleJpaController.class);
 	SampleJpaService sampleJpaService;
 	
 	@GetMapping("/sample/jpa/findAllBoard")
 	public ResVO findAllBoard(HttpServletRequest req, BoardVO param) {
+		logger.info("findAllBoard");
 		List<Board> list = sampleJpaService.findAllBoard(param);
 		return new ResVO(list);
 	}
 	
 	@PostMapping("/sample/jpa/insertBoard")
 	public ResVO insertBoard(HttpServletRequest req, @RequestBody BoardVO param) {
-		
+		logger.info("insertBoard");
 		sampleJpaService.insertBoard(param);
 		ResVO res = new ResVO();
 		return res;
