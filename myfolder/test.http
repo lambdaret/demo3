@@ -30,3 +30,11 @@ Content-Type: application/json
     "contentText": "한글123"
 }
 
+###
+POST http://localhost:8080/sample/insertBoard
+Content-Type: application/json
+
+{
+    "title": "title제목1",
+    "contentText": "한글123"
+}
