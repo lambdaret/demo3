@@ -13,6 +13,7 @@ import com.example.demo3.common.domain.ResVO;
 import com.example.demo3.sample.domain.BoardVO;
 import com.example.demo3.sample.model.Board;
 import com.example.demo3.sample.service.SampleJpaService;
+import com.example.demo3.sample.service.SampleService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,6 +25,7 @@ import lombok.AllArgsConstructor;
 public class SampleJpaController {
 	private final Logger logger = LogManager.getLogger(SampleJpaController.class);
 	SampleJpaService sampleJpaService;
+
 	
 	@GetMapping("/sample/jpa/findAllBoard")
 	public ResVO findAllBoard(HttpServletRequest req, BoardVO param) {
@@ -33,12 +35,14 @@ public class SampleJpaController {
 	}
 	
 	@PostMapping("/sample/jpa/insertBoard")
-	public ResVO insertBoard(HttpServletRequest req, @RequestBody BoardVO param) {
+	public ResVO insertJpaBoard(HttpServletRequest req, @RequestBody BoardVO param) {
 		logger.info("insertBoard");
 		sampleJpaService.insertBoard(param);
 		ResVO res = new ResVO();
 		return res;
 	}
 	
+
+
 	
 }
