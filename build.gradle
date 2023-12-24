@@ -17,7 +17,7 @@ configurations {
 		extendsFrom annotationProcessor
 	}
 	all {
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        //exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
 }
 
@@ -33,7 +33,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
-	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	//implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.22.0'
 
 	//implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
 
@@ -42,6 +43,7 @@ dependencies {
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
     testImplementation group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
     testImplementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
+
 
     compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

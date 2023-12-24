@@ -1,7 +1,5 @@
 package com.example.demo3.config;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -14,11 +12,28 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import com.example.demo3.common.domain.MyException;
 import com.example.demo3.common.domain.ResVO;
-import com.example.demo3.sample.controller.SampleController;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestControllerAdvice
 public class ResAdvice implements ResponseBodyAdvice<Object> {
-	private final Logger logger = LogManager.getLogger(SampleController.class);
+//	private final Logger logger = LogManager.getLogger(SampleController.class);
+	
+	/*
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ResponseEntity<ResVO> handleException(AuthenticationException ex) {
+		ResVO res = new ResVO();
+		
+		res.setSuccess(false);
+		res.setErrCode("UNKNOWN");
+		res.setErrMsg(ex.getMessage());
+		logger.error("UNAUTHORIZED", ex);
+    	
+        return new ResponseEntity<>(res, HttpStatus.UNAUTHORIZED);
+    }
+    */
 	
     @ExceptionHandler(MyException.class)
     public MyException jsonException(MyException ex) {
@@ -53,7 +68,7 @@ public class ResAdvice implements ResponseBodyAdvice<Object> {
 			res.setSuccess(false);
 			res.setErrCode("UNKNOWN");
 			res.setErrMsg(err.getMessage());
-			logger.error("UNKNOWN", err);
+			log.error("UNKNOWN", err);
 			return res;
 		} else if(body instanceof ResVO) {
 			ResVO res = (ResVO)body;
