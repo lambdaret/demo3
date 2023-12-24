@@ -38,3 +38,7 @@ Content-Type: application/json
     "title": "title제목1",
     "contentText": "한글123"
 }
+
+###
+GET http://localhost:8080/sample/encPwd
+Content-Type: application/json
