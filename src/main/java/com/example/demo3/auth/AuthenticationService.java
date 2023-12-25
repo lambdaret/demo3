@@ -1,12 +1,12 @@
 package com.example.demo3.auth;
 
 import com.example.demo3.config.JwtService;
-import com.example.demo3.token.Token;
-import com.example.demo3.token.TokenRepository;
-import com.example.demo3.token.TokenType;
-import com.example.demo3.user.Role;
-import com.example.demo3.user.User;
-import com.example.demo3.user.UserRepository;
+import com.example.demo3.security.token.Token;
+import com.example.demo3.security.token.TokenRepository;
+import com.example.demo3.security.token.TokenType;
+//import com.example.demo3.security.user.Role;
+import com.example.demo3.security.user.User;
+import com.example.demo3.security.user.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,10 +14,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+//import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

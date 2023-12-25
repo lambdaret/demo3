@@ -21,4 +21,6 @@ public class BoardVO {
 	Timestamp fDatetime;
 	Timestamp fTimestamp;
 	BigDecimal fDecimal;
+	
+	Paging paging; // = new Paging();
 }

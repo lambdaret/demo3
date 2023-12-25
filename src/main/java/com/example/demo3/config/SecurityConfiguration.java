@@ -13,16 +13,16 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
-import static com.example.demo3.user.Permission.ADMIN_CREATE;
-import static com.example.demo3.user.Permission.ADMIN_DELETE;
-import static com.example.demo3.user.Permission.ADMIN_READ;
-import static com.example.demo3.user.Permission.ADMIN_UPDATE;
-import static com.example.demo3.user.Permission.MANAGER_CREATE;
-import static com.example.demo3.user.Permission.MANAGER_DELETE;
-import static com.example.demo3.user.Permission.MANAGER_READ;
-import static com.example.demo3.user.Permission.MANAGER_UPDATE;
-import static com.example.demo3.user.Role.ADMIN;
-import static com.example.demo3.user.Role.MANAGER;
+import static com.example.demo3.security.user.Permission.ADMIN_CREATE;
+import static com.example.demo3.security.user.Permission.ADMIN_DELETE;
+import static com.example.demo3.security.user.Permission.ADMIN_READ;
+import static com.example.demo3.security.user.Permission.ADMIN_UPDATE;
+import static com.example.demo3.security.user.Permission.MANAGER_CREATE;
+import static com.example.demo3.security.user.Permission.MANAGER_DELETE;
+import static com.example.demo3.security.user.Permission.MANAGER_READ;
+import static com.example.demo3.security.user.Permission.MANAGER_UPDATE;
+import static com.example.demo3.security.user.Role.ADMIN;
+import static com.example.demo3.security.user.Role.MANAGER;
 import static org.springframework.http.HttpMethod.DELETE;
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.HttpMethod.POST;
@@ -45,8 +45,8 @@ public class SecurityConfiguration {
             "/configuration/security",
             "/swagger-ui/**",
             "/webjars/**",
-            "/swagger-ui.html",
-            "/sample/**"
+            "/swagger-ui.html" //,
+            //"/sample/**"
             };
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;

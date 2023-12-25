@@ -1,4 +1,4 @@
-package com.example.demo3.user;
+package com.example.demo3.security.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

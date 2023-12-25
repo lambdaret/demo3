@@ -1,6 +1,7 @@
-package com.example.demo3.token;
+package com.example.demo3.security.token;
 
-import com.example.demo3.user.User;
+import com.example.demo3.security.user.User;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,6 +30,7 @@ public class Token {
   @Column(unique = true)
   public String token;
 
+  @Builder.Default
   @Enumerated(EnumType.STRING)
   public TokenType tokenType = TokenType.BEARER;
 

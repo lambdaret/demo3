@@ -4,7 +4,9 @@ import org.springframework.security.core.AuthenticationException;
 
 public class AccountAlreadyExistsException extends AuthenticationException {
 
-    public AccountAlreadyExistsException(String msg, Throwable t) {
+	private static final long serialVersionUID = -8432665017283863776L;
+
+	public AccountAlreadyExistsException(String msg, Throwable t) {
         super(msg, t);
     }
 

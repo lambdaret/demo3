@@ -1,4 +1,4 @@
-package com.example.demo3.user;
+package com.example.demo3.security.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -7,7 +7,7 @@ import com.example.demo3.sample.domain.BoardVO;
 import com.example.demo3.sample.model.Board;
 import com.example.demo3.sample.repository.BoardMapper;
 import com.example.demo3.sample.repository.BoardRepository;
-import com.example.demo3.user.UserRepository;
+import com.example.demo3.security.user.UserRepository;
 
 import lombok.AllArgsConstructor;
 

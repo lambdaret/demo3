@@ -1,4 +1,4 @@
-package com.example.demo3.token;
+package com.example.demo3.security.token;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,13 +1,15 @@
 package com.example.demo3.sample.controller;
 
-import org.springframework.dao.DuplicateKeyException;
+import java.security.Principal;
+
+//import org.springframework.dao.DuplicateKeyException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo3.common.domain.MyException;
+//import com.example.demo3.common.domain.MyException;
 import com.example.demo3.common.domain.ResVO;
 import com.example.demo3.sample.domain.BoardVO;
 import com.example.demo3.sample.service.SampleService;
@@ -26,7 +28,7 @@ public class SampleController {
 	private final PasswordEncoder passwordEncoder;
 	
 	@PostMapping("/sample/insertBoard")
-	public ResVO insertBoard(HttpServletRequest req, @RequestBody BoardVO param) {
+	public ResVO insertBoard(HttpServletRequest req, @RequestBody BoardVO param, Principal connectedUser) {
 		log.info("insertBoard");
 		//sampleService.deleteUser(102);
 //		if(true) {

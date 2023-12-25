@@ -1,6 +1,5 @@
-package com.example.demo3.user;
+package com.example.demo3.security.user;
 
-import com.example.demo3.token.Token;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,8 +14,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.demo3.security.token.Token;
 
 @Data
 @Builder
@@ -26,6 +27,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Table(name = "user")
 public class User implements UserDetails {
 
+  private static final long serialVersionUID = 8611823339437897509L;
+  
   @Id
   @GeneratedValue
   private Integer id;

@@ -1,8 +1,9 @@
 package com.example.demo3.config;
 
 import com.example.demo3.auditing.ApplicationAuditAware;
-import com.example.demo3.user.UserRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.example.demo3.security.user.UserRepository;
+
+//import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
