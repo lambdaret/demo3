@@ -13,4 +13,11 @@
     <insert id="insertBoard" parameterType="com.example.demo3.sample.domain.BoardVO">
         INSERT INTO board (title, content_text) VALUES (#{title}, #{contentText})
     </insert>
+    
+    <delete id="insertUser" parameterType="int">
+        INSERT INTO user (id, email) VALUES (#{id}, "aaa")
+    </delete>
+    
+    
+    
 </mapper>

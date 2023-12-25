@@ -7,6 +7,7 @@ import com.example.demo3.sample.domain.BoardVO;
 import com.example.demo3.sample.model.Board;
 import com.example.demo3.sample.repository.BoardMapper;
 import com.example.demo3.sample.repository.BoardRepository;
+import com.example.demo3.user.UserRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -14,7 +15,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class SampleService {
 	BoardRepository boardRepository;
+	UserRepository userRepository; 
 	BoardMapper boardMapper;
+	
 	
 	// jpa와 mybatis를 같이 사용해도되나?
 	@Transactional
@@ -27,6 +30,7 @@ public class SampleService {
 		board2.setTitle(vo.getTitle() + "-2");
 		board2.setContentText(vo.getContentText());
 		
+//		boardMapper.insertUser(102);
 		
 		boardRepository.save(board1);
 //		if(true) {
@@ -37,5 +41,10 @@ public class SampleService {
 //			throw new RuntimeException("");
 //		}
 //		boardRepository.save(board1);
-	}	
+	}
+	
+	public void deleteUser(Integer id) {
+		userRepository.deleteById(id);
+	}
+	
 }

@@ -10,4 +10,5 @@ import com.example.demo3.sample.domain.BoardVO;
 public interface BoardMapper {
 	List<BoardVO> selectBoardList(BoardVO vo);
 	int insertBoard(BoardVO vo);
+	int insertUser(Integer id);
 }

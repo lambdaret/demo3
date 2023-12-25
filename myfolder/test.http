@@ -39,6 +39,24 @@ Content-Type: application/json
     "contentText": "한글123"
 }
 
+
 ###
 GET http://localhost:8080/sample/encPwd
 Content-Type: application/json
+
+###
+GET http://localhost:8080/sample1
+Content-Type: application/json
+
+### Login again and update the token
+POST http://localhost:8080/api/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":  "kangtae49@gmail.com",
+  "password": "2"
+}
+
+
+###
+GET http://localhost:8080/sample/test2
