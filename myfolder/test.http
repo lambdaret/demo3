@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "paging": {
-        "pageNo": 0,
+        "pageNo": 4,
         "pageSize": 10
     }
 }
@@ -25,6 +25,19 @@ Content-Type: application/json
 ###
 GET http://localhost:8080/sample/mybatis/selectBoardList
 Content-Type: application/json
+
+
+###
+GET http://localhost:8080/sample/mybatis/selectBoardPaging
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYW5ndGFlNDlAZ21haWwuY29tIiwiaWF0IjoxNzAzNTk3MDkzLCJleHAiOjE3MDM2ODM0OTN9.a6K5uXxd9Hya6fobDyX5wqmjEWvuF0-4JB-CfGg8UEM
+Content-Type: application/json
+
+{
+    "paging": {
+        "pageNo": 5,
+        "pageSize": 10
+    }
+}
 
 ###
 GET http://localhost:8080/sample/jpa/findAllBoard
